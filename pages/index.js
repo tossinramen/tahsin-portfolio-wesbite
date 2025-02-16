@@ -18,6 +18,9 @@ const Home = () => {
           <p className='max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16'>
 
           </p>
+          <div className="flex justify-center xl:hidden relative">
+            <ProjectsBtn/ >
+          </div>
     </div>
   </div>
   <div>image</div>
