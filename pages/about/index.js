@@ -72,20 +72,17 @@ const aboutData = [
     ],
   },
   {
-    title: 'credentials',
+    title: 'Education',
     info: [
       {
-        title: 'Web Development - ABC University, LA, CA',
-        stage: '2011',
+        title: 'Duke University',
+        stage: 'Durham, NC',
       },
       {
-        title: 'Computer Science Diploma - AV Technical Institute',
-        stage: '2009',
+        title: 'Durham School of the Arts',
+        stage: 'Durham, NC',
       },
-      {
-        title: 'Certified Graphic Designer - ABC Institute, Los Angeles, CA',
-        stage: '2006',
-      },
+      
     ],
   },
 ];
