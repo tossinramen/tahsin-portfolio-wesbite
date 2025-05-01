@@ -27,8 +27,9 @@ const personalData = [
           { name: 'Breaking Bad', description: '' },
           { name: 'The Office', description: '' },
           { name: 'Smallville', description: '' },
-          { name: '', description: '' },
-          { name: '', description: '' },
+          { name: 'Prison Break', description: '' },
+          { name: 'The Big Bang Theory', description: '' },
+          { name: 'Alice in Borderland', description: '' },
         ],
       },
     ],
@@ -37,12 +38,20 @@ const personalData = [
     title: 'K-Dramas',
     info: [
       {
-        title: 'Favorie Korean Dramas',
+        title: 'Favorite Korean Dramas',
         items: [
-          { name: 'When Life Gives You Tangerines', description: 'Sci-Fi' },
-          { name: 'Twinkling Watermelon', description: 'Action' },
-          { name: 'Interstellar', description: 'Sci-Fi' },
-          { name: 'Pulp Fiction', description: 'Crime' },
+          { name: 'When Life Gives You Tangerines', description: '9.4/10' },
+          { name: 'Twinkling Watermelon', description: '9.2/10' },
+          { name: 'Extracurricular', description: '8.3/10' },
+          { name: 'Itaewon Class', description: '8.5/10' },
+          { name: 'Weak Hero', description: '7.9/10' },
+          { name: 'Bloodhounds', description: '8.4/10' },
+          { name: 'Signal', description: '8.7/10' },
+          { name: 'D.P.', description: '8/10' },
+          { name: 'Reply 1988', description: '9.5/10' },
+          { name: "Death's Game", description: '8.3/10' },
+          { name: 'The Uncanny Counter', description: '7.5/10' },
+          { name: 'Alchemy of Souls', description: '8.6/10' },
         ],
       },
     ],
@@ -61,31 +70,17 @@ const personalData = [
       },
     ],
   },
-  {
-    title: 'artists',
-    info: [
-      {
-        title: 'Favorite Artists',
-        items: [
-          { name: 'Drake', description: 'Hip-Hop' },
-          { name: 'The Weeknd', description: 'R&B' },
-          { name: 'Kendrick Lamar', description: 'Hip-Hop' },
-          { name: 'Travis Scott', description: 'Hip-Hop' },
-        ],
-      },
-    ],
-  },
 ];
 
 const Personal = () => {
   const [index, setIndex] = useState(0);
 
   return (
-    <div className="h-full bg-primary/30 py-32 text-center xl:text-left">
+    <div className="min-h-screen bg-primary/30 py-32 text-center xl:text-left overflow-y-auto">
       <Circles />
-      <div className="container mx-auto h-full flex flex-col items-center justify-center text-center xl:text-left">
+      <div className="container mx-auto flex flex-col items-center justify-start text-center xl:text-left">
         {/* Tab Navigation */}
-        <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-6">
+        <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-6 flex-wrap justify-center">
           {personalData.map((item, itemIndex) => (
             <div
               key={itemIndex}
@@ -98,8 +93,8 @@ const Personal = () => {
           ))}
         </div>
 
-        {/* Tab Content */}
-        <div className="flex flex-col gap-y-4 items-center xl:items-start text-center xl:text-left">
+        
+        <div className="flex flex-col gap-y-4 items-center xl:items-start text-center xl:text-left w-full">
           {personalData[index].info.map((item, itemIndex) => (
             <motion.div
               key={itemIndex}
@@ -107,10 +102,10 @@ const Personal = () => {
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="flex flex-col items-center xl:items-start"
+              className="flex flex-col items-center xl:items-start w-full"
             >
               <div className="text-lg font-semibold mb-4">{item.title}</div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl">
                 {item.items.map((listItem, listIndex) => (
                   <motion.div
                     key={listIndex}
@@ -133,4 +128,4 @@ const Personal = () => {
   );
 };
 
-export default Personal; 
+export default Personal;
