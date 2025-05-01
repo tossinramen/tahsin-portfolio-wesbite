@@ -10,10 +10,17 @@ import {
   RiGithubLine,
 } from "react-icons/ri";
 import { FaSpotify } from "react-icons/fa";
+import { FaDiscord } from "react-icons/fa";
 
 const Socials = () => {
   return (
     <div className="flex items-center gap-x-5 text-lg">
+      <Link
+        href={"https://discord.com/users/213114196060143618"}
+        className="hover:text-accent transition-all duration-300"
+        >
+          <FaDiscord />
+        </Link>
       <Link
         href={"https://github.com/tossinramen"}
         className="hover:text-accent transition-all duration-300"
@@ -47,6 +54,7 @@ const Socials = () => {
       >
         <RiPinterestLine />
       </Link>
+      
     </div>
   );
 };

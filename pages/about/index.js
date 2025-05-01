@@ -1,78 +1,82 @@
 import React, { useState } from 'react';
 
-// icons
 import {
+  FaPython,
+  FaJava,
   FaHtml5,
   FaCss3,
   FaJs,
   FaReact,
-  FaWordpress,
-  FaFigma,
-} from "react-icons/fa";
+  FaGitAlt,
+  FaDocker,
+  FaAws,
+} from 'react-icons/fa';
 
 import {
+  SiC,
+  SiCplusplus,
+  SiCsharp,
+  SiMysql,
+  SiPostgresql,
+  SiTypescript,
+  SiR,
+  SiDjango,
+  SiFlask,
   SiNextdotjs,
-  SiFramer,
-  SiAdobexd,
-  SiAdobephotoshop,
-} from "react-icons/si";
-import Avatar from '../../components/Avatar';
+  SiNodedotjs,
+  SiPytorch,
+  SiGoland,
+} from 'react-icons/si';
 
-// data
+import Avatar from '../../components/Avatar';
+import Circles from '../../components/Circles';
+import { motion } from 'framer-motion';
+import { fadeIn } from '../../variants';
+
 const aboutData = [
   {
     title: 'skills',
     info: [
       {
-        title: 'Web Development',
+        title: 'Languages',
         icons: [
-          <FaHtml5 />,
-          <FaCss3 />,
-          <FaJs />,
-          <FaReact />,
-          <SiNextdotjs />,
-          <SiFramer />,
-          <FaWordpress />,
+          { icon: <FaPython />, name: 'Python' },
+          { icon: <FaJava />, name: 'Java' },
+          { icon: <SiC />, name: 'C' },
+          { icon: <SiCplusplus />, name: 'C++' },
+          { icon: <SiCsharp />, name: 'C#' },
+          { icon: <SiMysql />, name: 'SQL' },
+          { icon: <FaJs />, name: 'JavaScript' },
+          { icon: <FaHtml5 />, name: 'HTML' },
+          { icon: <FaCss3 />, name: 'CSS' },
+          { icon: <SiGoland />, name: 'GoLang' },
+          { icon: <SiR />, name: 'R' },
+          { icon: <SiTypescript />, name: 'TypeScript' },
         ],
       },
       {
-        title: 'UI/UX Design',
-        icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />],
+        title: 'Frameworks',
+        icons: [
+          { icon: <SiDjango />, name: 'Django' },
+          { icon: <SiFlask />, name: 'Flask' },
+          { icon: <FaReact />, name: 'React' },
+          { icon: <SiNodedotjs />, name: 'Node.js' },
+          { icon: <SiPytorch />, name: 'Pytorch' },
+          { icon: <SiNextdotjs />, name: 'Next.js' },
+        ],
+      },
+      {
+        title: 'Tools',
+        icons: [
+          { icon: <FaGitAlt />, name: 'Git' },
+          { icon: <FaDocker />, name: 'Docker' },
+          { icon: <FaAws />, name: 'AWS' },
+        ],
       },
     ],
   },
   {
-    title: 'awards',
-    info: [
-      {
-        title: 'Webby Awards - Honoree',
-        stage: '2011 - 2012',
-      },
-      {
-        title: 'Adobe Design Achievement Awards - Finalist',
-        stage: '2009 - 2010',
-      },
-    ],
-  },
-  {
-    title: 'experience',
-    info: [
-      {
-        title: 'UX/UI Designer - XYZ Company',
-        stage: '2012 - 2023',
-      },
-      {
-        title: 'Web Developer - ABC Agency',
-        stage: '2010 - 2012',
-      },
-      {
-        title: 'Intern - DEF Corporation',
-        stage: '2008 - 2010',
-      },
-    ],
-  },
-  {
-    title: 'Education',
+    title: 'education',
     info: [
       {
         title: 'Duke University',
@@ -82,14 +86,9 @@ const aboutData = [
         title: 'Durham School of the Arts',
         stage: 'Durham, NC',
       },
-      
     ],
   },
 ];
-
-import Circles from '../../components/Circles';
-import { motion } from 'framer-motion';
-import { fadeIn } from '../../variants';
 
 const About = () => {
   const [index, setIndex] = useState(0);
@@ -108,8 +107,7 @@ const About = () => {
       </motion.div>
 
       <div className="container mx-auto h-full flex flex-col items-center justify-center text-center xl:text-left">
-        
-        {/* Tab Navigation (Moved Above Content) */}
+        {/* Tab Navigation */}
         <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-6">
           {aboutData.map((item, itemIndex) => (
             <div
@@ -123,15 +121,21 @@ const About = () => {
           ))}
         </div>
 
-        {/* Content for Selected Tab (Ensure Centering) */}
+        {/* Tab Content */}
         <div className="flex flex-col gap-y-4 items-center xl:items-start text-center xl:text-left">
           {aboutData[index].info.map((item, itemIndex) => (
             <div key={itemIndex} className="flex flex-col items-center xl:items-start">
               <div className="text-lg font-semibold">{item.title}</div>
               {item.icons && (
-                <div className="flex gap-2 mt-2">
-                  {item.icons.map((icon, iconIndex) => (
-                    <span key={iconIndex} className="text-2xl">{icon}</span>
+                <div className="flex flex-wrap gap-3 mt-2 justify-center xl:justify-start">
+                  {item.icons.map((iconData, iconIndex) => (
+                    <div
+                      key={iconIndex}
+                      className="text-3xl transition-transform hover:scale-110"
+                      title={iconData.name}
+                    >
+                      {iconData.icon}
+                    </div>
                   ))}
                 </div>
               )}
