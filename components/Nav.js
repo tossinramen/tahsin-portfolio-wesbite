@@ -7,12 +7,14 @@ import {
   HiChatBubbleBottomCenterText,
   HiEnvelope,
 } from 'react-icons/hi2';
+import { PiMaskHappyDuotone } from "react-icons/pi";
 
 // nav data
 export const navData = [
   { name: 'home', path: '/', icon: <HiHome /> },
   { name: 'about', path: '/about', icon: <HiUser /> },
   { name: 'work', path: '/work', icon: <HiViewColumns /> },
+  { name: 'personal', path: '/personal', icon: <PiMaskHappyDuotone /> },
   {
     name: 'contact',
     path: '/contact',

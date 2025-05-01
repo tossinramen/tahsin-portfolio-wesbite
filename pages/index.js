@@ -5,6 +5,8 @@ import Avatar from "../components/Avatar";
 
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
+import { Typewriter } from 'react-simple-typewriter';
+
 
 const Home = () => {
   return (
@@ -19,6 +21,26 @@ const Home = () => {
           className="h1">
             Software Engineer <br />{" "}
             <span className="text-accent">Duke University</span>
+            <motion.div
+  variants={fadeIn("down", 0.25)}
+  initial="hidden"
+  animate="show"
+  exit="hidden"
+  className="text-3xl mt-4 text-white font-medium h-[30px]" 
+>
+  <Typewriter
+    words={['Student', 'Developer', 'Gamer', 'Sports Bettor', 'Esports Fan']}
+    loop={true}
+    cursor
+    cursorStyle="|"
+    typeSpeed={70}
+    deleteSpeed={50}
+    delaySpeed={1500}
+  />
+</motion.div>
+
+              
+            
           </motion.h1>
 
           <motion.p
@@ -29,12 +51,12 @@ const Home = () => {
 
           </motion.p>
 
-          {/* Projects Button (Hidden on larger screens) */}
+          
           <div className="flex justify-center xl:hidden relative">
            
           </div>
 
-          {/* Animated Projects Button */}
+          
           <motion.div variants={fadeIn("down", 0.4)} initial="hidden" animate="show" exit="hidden"
           className="hidden xl:flex">
             <ProjectsBtn />
