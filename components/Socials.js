@@ -1,13 +1,8 @@
-import Link from "next/link";
 import {
   RiYoutubeLine,
-  RiInstagramLine,
-  RiFacebookLine,
-  RiDribbbleLine,
-  RiBehanceLine,
-  RiPinterestLine,
   RiTwitterXLine,
   RiGithubLine,
+  RiPinterestLine,
 } from "react-icons/ri";
 import { FaSpotify } from "react-icons/fa";
 import { FaDiscord } from "react-icons/fa";
@@ -15,45 +10,60 @@ import { FaDiscord } from "react-icons/fa";
 const Socials = () => {
   return (
     <div className="flex items-center gap-x-5 text-lg">
-      <Link
-        href={"https://discord.com/users/213114196060143618"}
+      <a
+        href="https://discord.com/users/213114196060143618"
         className="hover:text-accent transition-all duration-300"
-        >
-          <FaDiscord />
-        </Link>
-      <Link
-        href={"https://github.com/tossinramen"}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaDiscord />
+      </a>
+
+      <a
+        href="https://github.com/tossinramen"
         className="hover:text-accent transition-all duration-300"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <RiGithubLine />
-      </Link>
-      <Link
-        href={"https://open.spotify.com/user/thundergodhd?si=00d19414a7044338"}
+      </a>
+
+      <a
+        href="https://open.spotify.com/user/thundergodhd?si=00d19414a7044338"
         className="hover:text-accent transition-all duration-300"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <FaSpotify />
-      </Link>
+      </a>
 
-      <Link
-        href={"https://www.youtube.com/@tahsinr9622/videos"}
+      <a
+        href="https://www.youtube.com/@tahsinr9622/videos"
         className="hover:text-accent transition-all duration-300"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <RiYoutubeLine />
-      </Link>
+      </a>
+      
 
-      <Link
-        href={"https://x.com/tossinramen"}
+      <a
+        href="https://x.com/tossinramen"
         className="hover:text-accent transition-all duration-300"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <RiTwitterXLine />
-      </Link>
-
-      <Link
-        href={"https://www.pinterest.com/tossinramen/_profile/"}
+      </a>
+      <a
+        href="https://www.pinterest.com/tossinramen/"
         className="hover:text-accent transition-all duration-300"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <RiPinterestLine />
-      </Link>
+      </a>
+
       
     </div>
   );

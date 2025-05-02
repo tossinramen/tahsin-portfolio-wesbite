@@ -31,7 +31,6 @@ const personalData = [
           { name: 'The Big Bang Theory', description: '9.1/10' },
           { name: 'Alice in Borderland', description: '8.3/10' },
           { name: 'Narcos & Narcos: Mexico', description: '9.8/10' },
-          { name: 'The Boys', description: '9.2/10' },
           { name: 'Criminal Minds', description: '8.3/10' },
           { name: 'The Blacklist', description: '8.1/10' },
         ],
@@ -50,7 +49,6 @@ const personalData = [
           { name: 'Itaewon Class', description: '8.5/10' },
           { name: 'Bloodhounds', description: '8.4/10' },
           { name: 'Signal', description: '8.7/10' },
-          { name: 'D.P.', description: '8/10' },
           { name: 'Reply 1988', description: '9.5/10' },
           { name: "Death's Game", description: '8.3/10' },
           { name: 'Alchemy of Souls', description: '8.6/10' },
@@ -68,7 +66,6 @@ const personalData = [
           { name: 'Attack on Titan', description: '9.8/10' },
           { name: 'Chainsaw Man', description: '8.3/10' },
           { name: 'Sword Art Online', description: '7.9/10' },
-          { name: 'The Promised Neverland', description: '8.1/10' },
           { name: 'Violet Evergarden', description: '9.3/10' },
           { name: 'Spy x Family', description: '9.1/10' },
           { name: 'Naurto Shippuden', description: '9.2/10' },
@@ -99,24 +96,28 @@ const Personal = () => {
   const [index, setIndex] = useState(0);
 
   return (
-    <div className="min-h-screen bg-primary/30 py-32 text-center xl:text-left overflow-y-auto">
+<div className="h-screen overflow-y-auto bg-primary/30 text-center xl:text-left px-4 pt-32 pb-12">
       <Circles />
       <div className="container mx-auto flex flex-col items-center justify-start text-center xl:text-left">
         {/* Tab Navigation */}
         <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-6 flex-wrap justify-center">
           {personalData.map((item, itemIndex) => (
-            <div
-              key={itemIndex}
-              className={`cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:-bottom-1 after:left-0
-                ${index === itemIndex ? 'text-accent after:w-[100%] after:bg-accent transition-all after:duration-300' : ''}`}
-              onClick={() => setIndex(itemIndex)}
-            >
-              {item.title}
-            </div>
+            <button
+            key={itemIndex}
+            onClick={() => setIndex(itemIndex)}
+            className={`capitalize xl:text-lg px-2 py-1 relative transition-all
+              ${index === itemIndex ? 'text-accent' : 'text-white'}
+            `}
+          >
+            <span className="relative z-10">{item.title}</span>
+            {index === itemIndex && (
+              <span className="absolute left-0 bottom-0 w-full h-[2px] bg-accent" />
+            )}
+          </button>
+          
           ))}
         </div>
 
-        
         <div className="flex flex-col gap-y-4 items-center xl:items-start text-center xl:text-left w-full">
           {personalData[index].info.map((item, itemIndex) => (
             <motion.div
@@ -128,7 +129,7 @@ const Personal = () => {
               className="flex flex-col items-center xl:items-start w-full"
             >
               <div className="text-lg font-semibold mb-4">{item.title}</div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl">
+              <div className="grid grid-cols-3 gap-2 w-full max-w-3xl">
                 {item.items.map((listItem, listIndex) => (
                   <motion.div
                     key={listIndex}
@@ -136,10 +137,10 @@ const Personal = () => {
                     initial="hidden"
                     animate="show"
                     exit="hidden"
-                    className="bg-white/10 p-4 rounded-lg backdrop-blur-sm"
+                    className="bg-white/10 p-1.5 rounded-lg backdrop-blur-sm"
                   >
-                    <div className="text-accent font-semibold">{listItem.name}</div>
-                    <div className="text-sm text-gray-400">{listItem.description}</div>
+                    <div className="text-accent font-semibold text-xs">{listItem.name}</div>
+                    <div className="text-[10px] text-gray-400">{listItem.description}</div>
                   </motion.div>
                 ))}
               </div>
