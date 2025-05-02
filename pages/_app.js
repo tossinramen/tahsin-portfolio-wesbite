@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import Head from 'next/head';
 // Components 
 import Layout from '../components/Layout';
 import Transition from '../components/Transition';
@@ -23,5 +24,10 @@ function MyApp({ Component, pageProps }) {
     </Layout>
   );
 }
+// Head
 
+
+<Head>
+  <link rel="icon" href="/icon.png" type="image/png" />
+</Head>
 export default MyApp;
