@@ -11,6 +11,7 @@ const linksMap = {
   '/work2.jpg': 'https://github.com/tossinramen/tossinpicks',
   '/work3.jpg': 'https://github.com/tossinramen/mini-amazon',
   '/work4.jpg': 'https://github.com/tossinramen/512p2pchat',
+  '/work5.jpg': 'https://github.com/tossinramen/animating-mondrian-art-inR',
 };
 
 // Slider data
@@ -26,10 +27,7 @@ const workSlider = {
     },
     {
       images: [
-        { title: 'title', path: '/thumb4.jpg' },
-        { title: 'title', path: '/thumb1.jpg' },
-        { title: 'title', path: '/thumb2.jpg' },
-        { title: 'title', path: '/thumb3.jpg' },
+        { title: 'title', path: '/work5.jpg' },
       ],
     },
   ],
