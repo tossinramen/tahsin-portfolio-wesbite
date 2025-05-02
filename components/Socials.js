@@ -4,8 +4,7 @@ import {
   RiGithubLine,
   RiPinterestLine,
 } from "react-icons/ri";
-import { FaSpotify } from "react-icons/fa";
-import { FaDiscord } from "react-icons/fa";
+import { FaSpotify, FaDiscord, FaLinkedin } from "react-icons/fa";
 
 const Socials = () => {
   return (
@@ -45,7 +44,6 @@ const Socials = () => {
       >
         <RiYoutubeLine />
       </a>
-      
 
       <a
         href="https://x.com/tossinramen"
@@ -55,6 +53,7 @@ const Socials = () => {
       >
         <RiTwitterXLine />
       </a>
+
       <a
         href="https://www.pinterest.com/tossinramen/"
         className="hover:text-accent transition-all duration-300"
@@ -64,7 +63,14 @@ const Socials = () => {
         <RiPinterestLine />
       </a>
 
-      
+      <a
+        href="https://www.linkedin.com/in/tahsin-rahman-/"
+        className="hover:text-accent transition-all duration-300"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaLinkedin />
+      </a>
     </div>
   );
 };
