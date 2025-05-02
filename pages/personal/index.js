@@ -96,8 +96,8 @@ const Personal = () => {
   const [index, setIndex] = useState(0);
 
   return (
-<div className="h-screen overflow-y-auto bg-primary/30 text-center xl:text-left px-4 pt-32 pb-12">
-      <Circles />
+<div className="h-screen overflow-y-auto bg-primary/30 text-center xl:text-left px-4 pt-40 sm:pt-32 pb-12">
+<Circles />
       <div className="container mx-auto flex flex-col items-center justify-start text-center xl:text-left">
         {/* Tab Navigation */}
         <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-6 flex-wrap justify-center">
