@@ -13,7 +13,7 @@ const Work = () => {
         <div className="flex flex-col xl:flex-row gap-x-16 items-start">
           
           
-          <div className="scale-[.70] sm:scale-100 text-center xl:text-left xl:w-[40%] mt-12 xl:mt-12 mx-auto xl:mx-0">
+          <div className="scale-[.70] sm:scale-100 text-center xl:text-left xl:w-[40%] mt-16 xl:mt-12 mx-auto xl:mx-0">
             <motion.h2
               variants={fadeIn('up', 0.2)}
               initial="hidden"
