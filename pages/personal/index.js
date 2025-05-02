@@ -11,7 +11,7 @@ const personalData = [
         title: 'Favorite Games',
         items: [
           { name: 'League of Legends', description: 'Rank: Diamond' },
-          { name: 'Teamfight Tactions', description: 'Rank: Master' },
+          { name: 'Teamfight Tactics', description: 'Rank: Master' },
           { name: 'Clash of Clans', description: 'Rank: Legend' },
           { name: 'Minecraft', description: '' },
         ],
