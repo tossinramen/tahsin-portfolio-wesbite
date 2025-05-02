@@ -57,10 +57,17 @@ const Home = () => {
           </div>
 
           
-          <motion.div variants={fadeIn("down", 0.4)} initial="hidden" animate="show" exit="hidden"
-          className="hidden xl:flex">
-            <ProjectsBtn />
-          </motion.div>
+          <motion.div
+  variants={fadeIn("down", 0.4)}
+  initial="hidden"
+  animate="show"
+  exit="hidden"
+  className="flex justify-center xl:justify-start mt-8 xl:mt-0 z-50 relative"
+>
+  <ProjectsBtn />
+</motion.div>
+
+
         </div>
       </div>
 
