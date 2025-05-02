@@ -1,4 +1,4 @@
-import Imagr from 'next/image';
+import Image from 'next/image';
 
 
 const Bulb = () => {
