@@ -15,6 +15,9 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <Layout>
+      <Head>
+        <link rel="icon" href="/icon.png" type="image/png" />
+      </Head>
       <AnimatePresence mode="wait">
         <motion.div key={router.route} className="h-full">
           <Transition />
@@ -24,10 +27,5 @@ function MyApp({ Component, pageProps }) {
     </Layout>
   );
 }
-// Head
 
-
-<Head>
-  <link rel="icon" href="/icon.png" type="image/png" />
-</Head>
 export default MyApp;
